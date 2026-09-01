@@ -1,0 +1,76 @@
+{
+  "_instructions": [
+    "1. API token is already set.",
+    "2. L2 board (18076098477) groups are already configured.",
+    "3. To add L1 board: find the L1 board ID from Monday.com, set 'l1_board_id',",
+    "   then run: python upload_to_monday.py discover --board L1_BOARD_ID",
+    "   and fill in 'l1_group_map' with the printed group IDs."
+  ],
+
+  "api_token": "add token here",
+
+  "board_id": "18076098477",
+
+  "group_map": {
+    "_comment": "L2 board — Discovered from board 18076098477 (L2 - Checklist Version x Scoring).",
+    "FSD": "topics",
+    "CRD": "group_mkwqp87k",
+    "PDD": "group_mkwxzhb5"
+  },
+
+  "column_map": {
+    "_comment": "Only the item name column is writable on L2 (all others are mirrors/formulas).",
+    "Deliverable VersionName": "name"
+  },
+
+  "item_name_source": "Deliverable VersionName",
+
+  "l1_board_id": "L1_BOARD_ID_HERE",
+
+  "l1_group_map": {
+    "_comment": "L1 board groups. Run: python upload_to_monday.py discover --board L1_BOARD_ID",
+    "FSD": "L1_GROUP_ID_FSD",
+    "CRD": "L1_GROUP_ID_CRD",
+    "PDD": "L1_GROUP_ID_PDD"
+  },
+
+  "criteria_name_only_board_id": "SECOND_BOARD_ID_HERE",
+
+  "criteria_name_only_column_map": {
+    "_comment": "For the criteria-name-only board.",
+    "Criteria Name": "name"
+  },
+
+  "l3_board_id": "10065306343",
+
+  "l3_column_map": {
+    "_comment": "L3 board writable columns. 'Name' → 'name' sets the Monday item title.",
+    "Name":                                    "name",
+    "Criteria ID Number – Deliverable Name":   "text_mm0g3q4s",
+    "Criteria Name":                           "text_mkw4zvn6",
+    "Deliverable VersionName":                 "text_mkw9c48p",
+    "Score":                                   "numeric_mkw4vt0k",
+    "Status":                                  "status",
+    "Review Date and Timestamp":               "date4",
+    "Detailed comments":                       "long_text_mkw4w2ra"
+  },
+
+  "l3_column_aliases": {
+    "_comment": "Alternative pipeline column names for each Monday column ID (Q&FS uses different names).",
+    "text_mm0g3q4s":      ["Criteria ID Number – Deliverable Name", "Criteria ID", "Criteria ID Number"],
+    "date4":              ["Review Date and Timestamp", "Review Date"],
+    "long_text_mkw4w2ra": ["Detailed comments", "Detailed Comments"]
+  },
+
+  "l3_sync": {
+    "_comment": "Set sync_label to the exact label text of the 'Synch Version and criteria' status column that triggers the Monday automation. Run 'python upload_to_monday.py discover --board 10065306343' and check color_mkwbaxzj settings_str for available labels.",
+    "column_id":  "color_mkwbaxzj",
+    "sync_label": ""
+  },
+
+  "upload": {
+    "batch_size": 10,
+    "delay_between_batches_seconds": 1,
+    "on_duplicate": "always_create"
+  }
+}
